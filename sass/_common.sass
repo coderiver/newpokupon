@@ -46,18 +46,295 @@
 // 	+png(blabla)
 // p
 // 	+jpg(bla)
++font(SegoeUI, SegoeUI)  
+=f
+	font-family: "SegoeUI", Arial, sans-serif 
++font(SegoeWP-Bold, SegoeWP-Bold) 
+=fb
+	font-family: "SegoeWP-Bold", Arial, sans-serif
++font(SegoeWP-Light, SegoeWP-Light) 
+=fl
+	font-family: "SegoeWP-Light", Arial, sans-serif
++font(SegoeWP-SemiBold, SegoeWP-SemiBold) 
+=fsb
+	font-family: "SegoeWP-SemiBold", Arial, sans-serif 
++font(SegoeWP-SemiLight, SegoeWP-SemiLight) 
+=fls
+	font-family: "SegoeWP-SemiLight", Arial, sans-serif 
 
+$dark: #1f384b
 
 body
-	font-family: Arial, sans-serif 
-	font-size: 12px 
-	line-height: 1.4
+	min-width: 1040px
+	background: #4A92CB
+	+f
+	font-size: 14px 
+	line-height: 1.3
+	color: #666 
+a
+	text-decoration: none
 
+// common blocks
+.wrapper
+	width: 1000px
+	padding: 15px
+	margin: 0 auto
+	background: #fff
 
-// common blocks      
+.title
+	margin-bottom: 30px
+	padding: 0 15px
+	+fls
+	font-size: 40px
+	color: $dark 
 
+.btn
+	height: 42px
+	padding: 0 13px 
+	background-color: #68A20F
+	+background-image(linear-gradient(to top, #68A20F 0%, #8AB616 100%))
+	border-radius: 2px
+	+fsb
+	font-size: 14px
+	color: #FFF 
+	vertical-align: middle
+	&:hover
+		background-color: #8BB716 
+		+background-image(linear-gradient(to top, #8BB716 0%, #9BCC1A 100%))
+	&:active
+		background-color: #68A20F 
+		+background-image(linear-gradient(to top, #68A20F 0%, #8AB616 100%))
+		box-shadow: inset 0 0 4px rgba(49, 76, 0, 0.75)
+	&.btn_wide
+		width: 100%
+	&.btn_big
+		height: 62px
+		padding: 0 18px
+	&.btn_gray
+		+background-image(linear-gradient(to top, #E9E9E9 0%, #FFF 100%))
+		border: 1px solid #CCC
+		+f
+		font-size: 20px
+		color: #000 
+		&:hover
+			background-color: #F1F1F1 
+			+background-image(linear-gradient(to top, #FFF 0%, #F1F1F1 100%))
+		&:active
+			background-color: #E9E9E9 
+			+background-image(linear-gradient(to top, #E9E9E9 0%, #FFF 100%))
+			box-shadow: inset 0 0 4px rgba(102, 102, 102, 0.75)
+	&.btn_yellow
+		background-color: #F9B300
+		+background-image(linear-gradient(to top, #F9B300 0%, #FDDE18 100%))
+		color: #000 
+		&:hover
+			background-color: #FFEA65 
+			+background-image(linear-gradient(to top, #FFEA65 0%, #FDDE18 100%))
+		&:active
+			background-color: #F9B300 
+			+background-image(linear-gradient(to top, #F9B300 0%, #FDDE18 100%))
+			box-shadow: inset 0 0 5px rgba(193, 123, 1, 0.75)
 
+.sl
+	position: relative
+	margin-bottom: 15px
+	.sl__in
+		position: relative
+		z-index: 2 
+	.sl__item
+		position: relative
+		height: 280px 
+	.sl__content
+		position: absolute
+		top: 30px
+		left: 340px 
+		right: 140px
+		color: #FFF
+	.sl__title
+		margin-bottom: 20px
+		+fb
+		font-size: 24px
+	.sl__text
+		margin-bottom: 35px
+		font-size: 20px
+	.sl__footer
+		font-size: 0
+	.sl__link
+		display: inline-block
+		padding: 5px 10px
+		background: rgba(#000,.13)
+		border-radius: 2px
+		+fsb
+		font-size: 15px
+		color: #FFF 
+		vertical-align: middle
+		&:hover
+			background: rgba(#ebebeb,.13) 
+	.sl__nav
+		position: relative
+		margin-top: -11px
+		border-bottom: 1px solid #e9e3e2
+		font-size: 0
+		white-space: nowrap
+		overflow: hidden
+		z-index: 4
+	.sl__logo
+		position: relative
+		height: 86px
+		margin-top: 11px
+		padding: 10px
+		background: #F5F5F5
+		box-shadow: 0 1px 0 1px #e5e5e5
+		cursor: pointer
+		+vertical
+		z-index: 2 
+		img
+			max-width: 88px
+			max-height: 66px
+			vertical-align: middle
+		&.slick-center
+			background: #FFF 
+			border: none
+			box-shadow: 0 0 5px rgba(#000,.4)
+			cursor: default
+			z-index: 4 
+			&:after
+				content: ""
+				position: absolute
+				top: -11px
+				left: 0
+				right: 0
+				height: 11px
+				background: #FDDE18
+	.slick-slide img
+		display: inline-block
+		+transform(none)
+	.slick-next,
+	.slick-prev
+		top: 95px
+		margin: 0
+		&:before
+			display: none
+	.slick-prev
+		left: 30px
+		+s(sl-prev)
+		&:hover
+			+sp(sl-prev-h)
+	.slick-next
+		right: 30px
+		+s(sl-next)
+		&:hover
+			+sp(sl-next-h)
+	.btn
+		margin-right: 45px
+		font-size: 15px
 
+.wrap-el
+	margin: 0 -15px 20px
+	padding-left: 6px
+	font-size: 0
+
+.wrap-button
+	margin-bottom: 50px
+	text-align: center
+
+.el
+	display: inline-block
+	width: 312px
+	margin: 0 9px 40px 8px
+	background: #F8F8F8 
+	border: 1px solid #CCC
+	border-radius: 2px
+	vertical-align: top
+	&:hover
+		box-shadow: 0.3px 4px 5px rgba(204, 204, 204, 0.75)
+	.el__pic	
+		height: 130px
+		background: #fff 
+		+vertical
+		img
+			vertical-align: middle
+	.el__in
+		padding: 2px 15px 30px
+	.el__meta
+		display: table
+		width: 100%
+		margin-bottom: 15px
+	.el__type,
+	.el__fav
+		display: table-cell
+		vertical-align: middle
+	.el__fav
+		text-align: right
+		button
+			+s(star)
+			&:hover
+				+sp(star-h)
+			&:active,
+			&.is-active
+				+sp(star-a)
+	.el__type
+		+fl
+		font-size: 16px
+	.el__text
+		margin-bottom: 15px
+		font-size: 18px
+		color: $dark
+	.el__info
+		display: table
+		width: 100%
+		margin-bottom: 20px
+		li
+			display: table-cell
+			text-align: right
+			font-size: 14px
+			&:first-child
+				text-align: left
+
+.tabs
+	margin: 0 -15px 70px
+	background: #f7f7f7 
+	.tabs__nav
+		margin-bottom: 40px
+		padding: 0 35px
+		background: #F0F0F0 
+		box-shadow: 0 1px 0 1px #eaeaea inset, 0 -1px 0 1px #eaeaea inset
+	.tabs__list	
+		display: table
+		a
+			display: table-cell
+			height: 59px
+			padding: 0 17px 7px
+			font-size: 0
+			vertical-align: middle
+			&.is-active
+				background: #F7F7F7 
+				box-shadow: 0 1px 0 1px #f4f4f4 inset
+		i, span
+			display: inline-block
+			vertical-align: middle
+		i
+			margin-right: 12px
+		span
+			+fsb
+			font-size: 15px
+			color: #566068 
+	.tabs__fashion
+		+s(tabs-fashion)
+	.tabs__tech
+		+s(tabs-tech)
+	.tabs__beauty
+		+s(tabs-beauty)
+	.tabs__travel
+		+s(tabs-travel)
+	.tabs__home
+		+s(tabs-home)
+	.tabs__in
+		padding: 0 15px 40px
+	.wrap-el
+		margin-bottom: 10px
+	.wrap-button
+		margin-bottom: 0
 
 
 
