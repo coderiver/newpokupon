@@ -82,11 +82,20 @@ a
 	background: #fff
 
 .title
-	margin-bottom: 30px
+	margin-bottom: 35px
 	padding: 0 15px
 	+fls
 	font-size: 40px
 	color: $dark 
+	line-height: 1
+	&.title_small
+		margin-bottom: 30px
+		+fsb
+		font-size: 20px
+	&.title_p0
+		padding: 0
+	&.title_center
+		text-align: center
 
 .btn
 	height: 42px
@@ -134,10 +143,24 @@ a
 			background-color: #F9B300 
 			+background-image(linear-gradient(to top, #F9B300 0%, #FDDE18 100%))
 			box-shadow: inset 0 0 5px rgba(193, 123, 1, 0.75)
+	&.btn_ico
+		font-size: 0
+		i, span
+			display: inline-block
+			vertical-align: middle
+		i
+			margin-right: 13px
+		span
+			font-size: 12px
+		&.is-active
+			.btn__heart
+				+sp(heart-a)
+	.btn__heart
+		+s(heart)
 
 .sl
 	position: relative
-	margin-bottom: 15px
+	margin-bottom: 20px
 	.sl__in
 		position: relative
 		z-index: 2 
@@ -336,20 +359,385 @@ a
 	.wrap-button
 		margin-bottom: 0
 
+.text
+	margin-bottom: 50px
+	.text__in
+		line-height: 2
 
+.layout
+	display: table
+	width: 100%
+	padding: 15px 0 0 15px 
 
+.column
+	display: table-cell
+	vertical-align: top
+	table-layout: fixed
+	&.column_section
+		& + .column_aside
+			width: 260px
+			padding: 0 0 0 30px
+	&.column_aside
+		width: 240px
+		padding-right: 30px
 
+.shop
+	.shop__el
+		margin-bottom: 25px
+	.shop__logo
+		height: 176px
+		border: 1px solid #CCC
+		border-width: 1px 1px 0
+		border-radius: 2px 2px 0 0
+		+vertical
+		img
+			vertical-align: middle
+	.shop__available
+		margin-bottom: 25px
+		padding-bottom: 25px
+		border-bottom: 1px solid #e5e5e5 
+		+fl
+		font-size: 14px
+		text-align: center
+		text-transform: uppercase
+		color: $dark 
+		span
+			display: block
+			margin-bottom: 10px
+			+fsb
+			font-size: 90px
+			line-height: 1
+	.btn
+		height: 30px
+		border-radius: 0 0 2px 2px
 
+.list-btn
+	button
+		display: block
+		width: 188px
+		height: 30px
+		margin-bottom: 10px
+		padding: 0 8px
+		background: none 
+		border-radius: 4px
+		border: 1px solid
+		+fsb
+		font-size: 12px
+		text-align: left
+		&.is-gray
+			background: #f0f0f0 
+			border-color: #ccc
+		&.is-red
+			border-color: #a72832
+		&.is-viol
+			border-color: #53447e
+		&.is-blue
+			border-color: #2eafb3
+		&.is-green
+			border-color: #2eafb3
 
+.wrap-code
+	margin-bottom: 50px	
+	
+.wrap-code_logo
+	.code
+		.code__title
+			font-size: 18px	
+		.code__btn
+			width: 180px
+		.btn
+			font-size: 13px
 
+.code
+	display: table
+	width: 100%
+	margin-bottom: 25px
+	background: #F8F8F8
+	border: 1px solid #CCC
+	border-radius: 2px
+	table-layout: fixed
+	.code__in,
+	.code__btn,
+	.code__logo
+		display: table-cell
+		height: 180px
+	.code__logo
+		width: 135px
+		background: #FFF
+		border-radius: 2px 0 0 2px 
+		vertical-align: middle
+		text-align: center
+		img
+			max-width: 96px
+	.code__in
+		padding: 12px 14px
+		vertical-align: top
+		+fsb
+	.code__btn
+		width: 200px
+		padding: 15px 15px 15px 0
+		text-align: right
+		vertical-align: middle
+	.code__head
+		margin-bottom: 15px
+		color: #666 
+		font-size: 0
+	.code__label,	
+	.code__only,	
+	.code__used
+		display: inline-block
+		vertical-align: middle	
+	.code__label,	
+	.code__only
+		margin-right: 25px
+	.code__label	
+		padding: 3px 0
+		border-radius: 2px
+		text-transform: uppercase
+		font-size: 12px
+		&.is-red,
+		&.is-viol,
+		&.is-green
+			padding: 3px 8px
+			color: #fff 
+		&.is-red
+			background: #A72832 
+		&.is-viol
+			background: #53447E 
+		&.is-green
+			background: #2eafb3 
+	.code__used,
+	.code__only
+		font-size: 16px
+	.code__only
+		color: #5C9800 
+	.code__title	
+		height: 46px
+		margin-bottom: 12px
+		font-size: 20px
+		color: $dark
+		line-height: 1.2
+		overflow: hidden
+	.code__text
+		margin-bottom: 12px
+		font-size: 16px
+		color: #999 
+		+text-overflow
+	.code__foot
+		font-size: 0
+		span
+			display: inline-block
+			margin-right: 25px
+			vertical-align: middle
+			font-size: 14px
+			color: #999 
+			& + span
+				margin: 0
+	.code__vote
+		display: inline-block
+		margin-right: 7px
+		vertical-align: middle
+		button
+			width: 25px
+			height: 27px
+			border: 1px solid #d6d6d6
+			background: #FFF 
+			border-radius: 0 2px 2px 0
+			font-size: 0
+			vertical-align: top
+			&:first-child
+				border-radius: 2px 0 0 2px
+				border-width: 1px 0 1px 1px
+		i
+			display: inline-block
+			vertical-align: middle
+	.code__like
+		i
+			+s(like)
+		&.is-active
+			i
+				+sp(like-a)
+	.code__dislike
+		i
+			+s(dislike)
+		&.is-active
+			i
+				+sp(dislike-a)
+	.btn
+		width: 100%
+		padding: 0
 
+.breadcrumbs
+	margin-bottom: 15px
+	padding-left: 15px
+	li
+		display: inline
+	a
+		color: #147ACC 
+		&:after
+			content: ">"
+			margin-left: 2px
+			
+.menu
+	margin-bottom: 30px
+	.menu__group
+		margin-top: 20px
+		padding-top: 20px
+		border-top: 1px solid #e5e5e5
+		&:first-child
+			margin: 0
+			padding: 0
+			border: none
+	.menu__title
+		margin-bottom: 15px
+		+fsb
+		font-size: 18px
+		color: #333 
+	.menu__list
+		li
+			margin-bottom: 7px
+		a
+			color: #147acc 
+		
+.types
+	margin: 0 15px 50px
+	overflow: hidden
+	.types__list
+		margin: 0 -15px 0 -5px
+		padding-bottom: 1px
+		font-size: 0
+	.types__item
+		position: relative
+		display: inline-block
+		width: 160px
+		height: 144px 
+		margin: 0 -1px -1px 0
+		padding: 23px 15px 0
+		vertical-align: top
+		&:before,
+		&:after
+			content: ""
+			position: absolute
+			border: 1px solid #eaeaea
+		&:before
+			top: 22px
+			left: 0
+			right: 0
+			bottom: 22px
+			border-width: 0 1px
+		&:after
+			top: 0
+			left: 14px
+			right: 14px
+			bottom: 0
+			border-width: 1px 0
+		@for $i from 1 through 12
+			&:hover
+				.types__ico-#{$i}
+					+sp(cat#{$i}-h)
+			&:active
+				.types__ico-#{$i}
+					+s(cat#{$i})
+	.types__ico
+		height: 50px
+		margin-bottom: 12px
+		+vertical
+		i
+			display: inline-block
+			vertical-align: middle
+	@for $i from 1 through 12
+		.types__ico-#{$i}
+			+s(cat#{$i})
+	.types__title
+		+fsb
+		font-size: 16px
+		text-align: center
+		color: #333 
 
+.shops
+	margin: 0 -5px 40px 0
+	font-size: 0
+	.shops__item
+		display: inline-block
+		width: 213px
+		height: 221px
+		margin: 0 15px 30px
+		padding-top: 14px
+		border: 1px solid #cccccc
+		border-radius: 4px
+		vertical-align: top
+	.shops__like
+		margin-bottom: 15px
+		padding-right: 15px 
+		text-align: right
+		button
+			+s(heart)
+			&.is-active
+				+sp(heart-a)
+	.shops__pic
+		text-align: center
+		font-size: 0
 
+.pop
+	font-size: 0
+	.pop__item
+		display: inline-block
+		width: 20%
+		margin-bottom: 30px
+		padding: 0 20px
+		vertical-align: middle
 
+.letters
+	margin-bottom: 60px
+	border-top: 1px solid #E5E5E5 
+	font-size: 0
+	.letters__row
+		padding: 15px 8px
+		border-bottom: 1px solid #E5E5E5 
+		+justify
+	a
+		display: inline-block
+		padding: 0 6px
+		border: 1px solid transparent
+		vertical-align: top
+		font-size: 16px
+		color: #147acc 
+		text-transform: uppercase
+		line-height: 24px
+		&.is-active
+			border-color: #cccccc
+			color: #333 
 
-
-
-
+.catalog
+	margin-bottom: 40px
+	.catalog__item
+		margin-top: 10px
+		padding-top: 20px
+		border-top: 1px solid #e5e5e5
+		+clr
+		&:first-child
+			margin: 0
+			padding: 0
+			border: none
+	.catalog__letter
+		float: left
+		width: 145px
+		padding-left: 15px
+		+fb
+		font-size: 120px 
+		color: #333
+		line-height: 0.65
+	.catalog__list
+		float: left
+		width: 825px 
+		ul
+			float: left
+			width: 20%
+			padding-right: 20px
+		li
+			margin-bottom: 10px
+		a
+			color: #147acc 
 
 
 
