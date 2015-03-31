@@ -59,7 +59,7 @@
 =fsb
 	font-family: "SegoeWP-SemiBold", Arial, sans-serif 
 +font(SegoeWP-SemiLight, SegoeWP-SemiLight) 
-=fls
+=fsl
 	font-family: "SegoeWP-SemiLight", Arial, sans-serif 
 
 $dark: #1f384b
@@ -84,10 +84,15 @@ a
 .title
 	margin-bottom: 35px
 	padding: 0 15px
-	+fls
+	+fsl
 	font-size: 40px
 	color: $dark 
 	line-height: 1
+	h1, p
+		display: inline-block
+		font-size: 40px
+	h1
+		font-weight: 400  
 	&.title_small
 		margin-bottom: 30px
 		+fsb
@@ -119,6 +124,10 @@ a
 	&.btn_big
 		height: 62px
 		padding: 0 18px
+	&.btn_bigger
+		height: 52px
+		padding: 0 20px
+		font-size: 18px
 	&.btn_gray
 		+background-image(linear-gradient(to top, #E9E9E9 0%, #FFF 100%))
 		border: 1px solid #CCC
@@ -272,11 +281,17 @@ a
 	&:hover
 		box-shadow: 0.3px 4px 5px rgba(204, 204, 204, 0.75)
 	.el__pic	
+		position: relative
 		height: 130px
 		background: #fff 
 		+vertical
 		img
 			vertical-align: middle
+	.el__exclusive
+		position: absolute
+		top: -1px
+		left: -1px
+		+s(exclusive)
 	.el__in
 		padding: 2px 15px 30px
 	.el__meta
@@ -739,9 +754,147 @@ a
 		a
 			color: #147acc 
 
+.popup
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	padding: 100px 0
+	background: rgba(#000,.5)
+	+vertical
+	z-index: 999
+	.popup__in	
+		position: relative
+		display: inline-block
+		width: 600px
+		margin: 0 auto
+		background: #FFF
+		box-shadow: 0 5px 5px rgba(51, 51, 51, 0.75)
+		vertical-align: middle
+	.popup__close
+		position: absolute
+		top: 15px
+		right: 25px
+		+s(close)
+		z-index: 4 
+		&:hover
+			+sp(close-h)
+	.popup__head
+		padding: 40px 30px 25px
+		background: #F8F8F8 
+		border-bottom: 1px solid #DFE3E6
+	.popup__title
+		margin-bottom: 20px
+		+fl
+		font-size: 22px
+		color: $dark 
+	.popup__title_mb0
+		margin-bottom: 0
+	.popup__code
+		margin-bottom: 25px
+		font-size: 0
+		text-align: center
+	.popup__code-in
+		display: inline-block
+		border: 1px dashed #dde1e2
+		background: #FFF 
+		vertical-align: top
+		span
+			display: block
+			width: 290px
+			height: 46px
+			+fsb
+			font-size: 36px
+			color: #333 
+			line-height: 43px
+	.popup__center
+		padding: 25px 30px
+		border-bottom: 1px solid #DFE3E6 
+	.popup__foot
+		display: table
+		width: 100%
+	.popup__foot-cell
+		display: table-cell
+		vertical-align: middle
+		padding: 15px 30px
+	.popup__el
+		position: relative
+		display: table
+		width: 100%
+		text-align: left
+	.popup__el-pic,
+	.popup__el-in
+		display: table-cell
+		vertical-align: middle
+	.popup__el-pic
+		width: 120px
+		padding-right: 20px
+		img
+			max-width: 100%
+	.popup__el-in
+		padding-right: 35px
+	.popup__el-title
+		margin-bottom: 5px
+		+fsb
+		font-size: 18px
+		color: $dark 
+	.popup__el-text
+		font-size: 16px
+		color: #666 
+	.popup__el-fav
+		position: absolute
+		top: 0
+		right: 0
+		+s(star)
+		&:hover
+			+sp(star-h)
+		&:active,
+		&.is-active
+			+sp(star-a)
+	.popup__text
+		padding-top: 15px
+		font-size: 16px
+		a
+			color: #147acc 
+	.popup__text_mb40
+		margin-bottom: 40px
+	.popup__link
+		text-align: right
+		a
+			font-size: 16px
+			color: #147acc 
+	.btn
+		min-width: 380px
 
-
-
+.social
+	font-size: 0
+	a
+		display: inline-block
+		margin-left: 3px
+		vertical-align: middle
+		&:first-child
+			margin: 0
+	.social__vk
+		+s(vk)
+		&:hover
+			+sp(vk-h)
+	.social__fb
+		+s(fb)
+		&:hover
+			+sp(fb-h)
+	.social__tw
+		+s(tw)
+		&:hover
+			+sp(tw-h)
+	.social__gp
+		+s(gp)
+		&:hover
+			+sp(gp-h)
+	.social__mail
+		+s(mail)
+		&:hover
+			+sp(mail-h)
 
 
 
