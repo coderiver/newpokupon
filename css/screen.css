@@ -77,12 +77,12 @@ a { text-decoration: none; }
 .sl .sl__footer { font-size: 0; }
 .sl .sl__link { display: inline-block; padding: 5px 10px; background: rgba(0, 0, 0, 0.13); border-radius: 2px; font-family: "SegoeWP-SemiBold", Arial, sans-serif; font-size: 15px; color: white; vertical-align: middle; }
 .sl .sl__link:hover { background: rgba(235, 235, 235, 0.13); }
-.sl .sl__nav { position: relative; margin-top: -11px; border-bottom: 1px solid #e9e3e2; font-size: 0; white-space: nowrap; overflow: hidden; z-index: 4; }
+.sl .sl__nav { position: relative; margin-top: -11px; border-bottom: 1px solid #e9e3e2; z-index: 4; }
 .sl .sl__logo { position: relative; height: 86px; margin-top: 11px; padding: 10px; background: whitesmoke; box-shadow: 0 1px 0 1px #e5e5e5; cursor: pointer; text-align: center; font-size: 0; z-index: 2; }
 .sl .sl__logo:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
 .sl .sl__logo img { max-width: 88px; max-height: 66px; vertical-align: middle; }
-.sl .sl__logo.slick-center { background: white; border: none; box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); cursor: default; z-index: 4; }
-.sl .sl__logo.slick-center:after { content: ""; position: absolute; top: -11px; left: 0; right: 0; height: 11px; background: #fdde18; }
+.sl .sl__logo.is-active, .sl .sl__logo.slick-center { background: white; border: none; box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); cursor: default; z-index: 4; }
+.sl .sl__logo.is-active:after, .sl .sl__logo.slick-center:after { content: ""; position: absolute; top: -11px; left: 0; right: 0; height: 11px; background: #fdde18; }
 .sl .slick-slide img { display: inline-block; -webkit-transform: none; -moz-transform: none; -ms-transform: none; -o-transform: none; transform: none; }
 .sl .slick-next, .sl .slick-prev { top: 95px; margin: 0; }
 .sl .slick-next:before, .sl .slick-prev:before { display: none; }
