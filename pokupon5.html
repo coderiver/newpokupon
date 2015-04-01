@@ -3,12 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<title>Template</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="format-detection" content="telephone=no">
-	<!-- <meta name="viewport" content="width=1200"> -->
-	<!-- <meta name="viewport" content="initial-scale=1, user-scalable=no"> -->
-	<link rel="stylesheet" media="all" href="css/screen.css" >
-	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" media="all" href="http://pokupon.ua/assets/pokuponua_manifest-ceefb16f8f1eb1e694a9304fec5af240.css">
+	<link rel="stylesheet" media="all" href="css/screen.css">
+	<script src="http://pokupon.ua/assets/application_opt_manifest-7bac35911b5a56b03f25be7c94c291ff.js"></script>
+	<script src="js/slick.js"></script>
+	<script src="js/common.js"></script>
 </head>
 <body>
 <!-- wrapper -->
@@ -59,73 +58,75 @@
 	<!-- title -->
 	<div class="title title_small">Все магазины</div>
 	<!-- letters -->
-	<div class="letters">
-		<div class="letters__row">
-			<a class="is-active" href="#">A</a>
-			<a href="#">B</a>
-			<a href="#">C</a>
-			<a href="#">D</a>
-			<a href="#">E</a>
-			<a href="#">F</a>
-			<a href="#">G</a>
-			<a href="#">H</a>
-			<a href="#">I</a>
-			<a href="#">J</a>
-			<a href="#">K</a>
-			<a href="#">L</a>
-			<a href="#">M</a>
-			<a href="#">N</a>
-			<a href="#">O</a>
-			<a href="#">P</a>
-			<a href="#">R</a>
-			<a href="#">S</a>
-			<a href="#">T</a>
-			<a href="#">U</a>
-			<a href="#">V</a>
-			<a href="#">W</a>
-			<a href="#">X</a>
-			<a href="#">Y</a>
-			<a href="#">Z</a>
-			<a href="#">0-9</a>
-		</div>
-		<div class="letters__row">
-			<a href="#">A</a>
-			<a href="#">B</a>
-			<a href="#">C</a>
-			<a href="#">D</a>
-			<a href="#">E</a>
-			<a href="#">F</a>
-			<a href="#">G</a>
-			<a href="#">H</a>
-			<a href="#">I</a>
-			<a href="#">J</a>
-			<a href="#">K</a>
-			<a href="#">L</a>
-			<a href="#">M</a>
-			<a href="#">N</a>
-			<a href="#">O</a>
-			<a href="#">P</a>
-			<a href="#">R</a>
-			<a href="#">S</a>
-			<a href="#">T</a>
-			<a href="#">U</a>
-			<a href="#">V</a>
-			<a href="#">W</a>
-			<a href="#">X</a>
-			<a href="#">Y</a>
-			<a href="#">Z</a>
-			<a href="#">U</a>
-			<a href="#">V</a>
-			<a href="#">W</a>
-			<a href="#">X</a>
-			<a href="#">Y</a>
-			<a href="#">Z</a>
-			<a href="#">0-9</a>
+	<div class="letters js-letters">
+		<div class="letters__in">
+			<div class="letters__row">
+				<a href="#" data-letter="js-letter-a">A</a>
+				<a href="#" data-letter="js-letter-b">B</a>
+				<a href="#" data-letter="js-letter-c">C</a>
+				<a href="#">D</a>
+				<a href="#">E</a>
+				<a href="#">F</a>
+				<a href="#">G</a>
+				<a href="#">H</a>
+				<a href="#">I</a>
+				<a href="#">J</a>
+				<a href="#">K</a>
+				<a href="#">L</a>
+				<a href="#">M</a>
+				<a href="#">N</a>
+				<a href="#">O</a>
+				<a href="#">P</a>
+				<a href="#">R</a>
+				<a href="#">S</a>
+				<a href="#">T</a>
+				<a href="#">U</a>
+				<a href="#">V</a>
+				<a href="#">W</a>
+				<a href="#">X</a>
+				<a href="#">Y</a>
+				<a href="#">Z</a>
+				<a href="#">0-9</a>
+			</div>
+			<div class="letters__row">
+				<a href="#">A</a>
+				<a href="#">B</a>
+				<a href="#">C</a>
+				<a href="#">D</a>
+				<a href="#">E</a>
+				<a href="#">F</a>
+				<a href="#">G</a>
+				<a href="#">H</a>
+				<a href="#">I</a>
+				<a href="#">J</a>
+				<a href="#">K</a>
+				<a href="#">L</a>
+				<a href="#">M</a>
+				<a href="#">N</a>
+				<a href="#">O</a>
+				<a href="#">P</a>
+				<a href="#">R</a>
+				<a href="#">S</a>
+				<a href="#">T</a>
+				<a href="#">U</a>
+				<a href="#">V</a>
+				<a href="#">W</a>
+				<a href="#">X</a>
+				<a href="#">Y</a>
+				<a href="#">Z</a>
+				<a href="#">U</a>
+				<a href="#">V</a>
+				<a href="#">W</a>
+				<a href="#">X</a>
+				<a href="#">Y</a>
+				<a href="#">Z</a>
+				<a href="#">0-9</a>
+			</div>
 		</div>
 	</div>
 	<!-- catalog -->
 	<div class="catalog">
-		<div class="catalog__item">
+		<div class="catalog__item js-letter-a">
 			<div class="catalog__letter">A</div>
 			<div class="catalog__list">
 				<ul>
@@ -200,8 +201,8 @@
 				</ul>
 			</div>
 		</div>
-		<div class="catalog__item">
-			<div class="catalog__letter">A</div>
+		<div class="catalog__item js-letter-b">
+			<div class="catalog__letter">B</div>
 			<div class="catalog__list">
 				<ul>
 					<li><a href="#">ABC tickets</a></li>
@@ -275,8 +276,8 @@
 				</ul>
 			</div>
 		</div>
-		<div class="catalog__item">
-			<div class="catalog__letter">A</div>
+		<div class="catalog__item js-letter-c">
+			<div class="catalog__letter">C</div>
 			<div class="catalog__list">
 				<ul>
 					<li><a href="#">ABC tickets</a></li>
@@ -352,7 +353,5 @@
 		</div>
 	</div>
 </div>
-<!-- load scripts -->
-<script src="js/lib/head.js" data-headjs-load="js/init.js"></script>
 </body>
 </html>

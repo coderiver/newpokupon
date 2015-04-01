@@ -1,38 +1,38 @@
 // # SHORT HOWTO
 // ## Sprites
-//     .whatever
-//          +sized-sprite($icons, coderiver) //or
+//	 .whatever
+//		  +sized-sprite($icons, coderiver) //or
 // 			+s(codedby) //gets default value for spritemap as $icons
 // ### animation example
-//     +include keyframes(rotate)
-//        from
-//           +rotate(0)
-//        to
-//           +rotate(360)
+//	 +include keyframes(rotate)
+//		from
+//		   +rotate(0)
+//		to
+//		   +rotate(360)
 // ## animation usage
-//     body:hover
-// 	    +animation(rotate 200s linear infinite)
+//	 body:hover
+// 		+animation(rotate 200s linear infinite)
 // ## animations easing, see easings.net for full list and examples, tnx @ai
-//     transition: all 1.2s ceaser($ease-in)
+//	 transition: all 1.2s ceaser($ease-in)
 // ## gradient example
-//     +background-image(linear-gradient(#232323, #5c5c5c));
-//     +g(#232323, #5c5c5c);
+//	 +background-image(linear-gradient(#232323, #5c5c5c));
+//	 +g(#232323, #5c5c5c);
 //	   horizontal
-//     +gh(#232323, #5c5c5c);
+//	 +gh(#232323, #5c5c5c);
 // ## making bw-images
-//     img
+//	 img
 //			@extend %gray
 // ## predefined media-queries: https://github.com/paranoida/sass-mediaqueries
-//     +min-screen(320)
+//	 +min-screen(320)
 //			display: none
 // +max-screen(1000), +iphone5, +iphone4, +ipad-retina, +ipad, +hdpi - also available
 //
 // ## use cycles
-//     @for $i from 1 through 3
-//       .item-#{$i}
+//	 @for $i from 1 through 3
+//	   .item-#{$i}
 //			width: 2em * $i;
-//     @each $s in a,b,c
-// 	    	#{$s}
+//	 @each $s in a,b,c
+// 			#{$s}
 //				display: none
 // ## fonts 
 // Save fonts to /css/fonts, after that write (eot, woff, ttf):
@@ -73,6 +73,10 @@ body
 	color: #666 
 a
 	text-decoration: none
+button
+	box-shadow: none
+	&:active
+		box-shadow: none
 
 // common blocks
 .wrapper
@@ -80,819 +84,885 @@ a
 	padding: 15px
 	margin: 0 auto
 	background: #fff
-
-.title
-	margin-bottom: 35px
-	padding: 0 15px
-	+fsl
-	font-size: 40px
-	color: $dark 
-	line-height: 1
-	h1, p
-		display: inline-block
-		font-size: 40px
-	h1
-		font-weight: 400  
-	&.title_small
-		margin-bottom: 30px
-		+fsb
-		font-size: 20px
-	&.title_p0
+	html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5,
+	h6, p, blockquote, pre,a, abbr, acronym, address, big,
+	cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small,
+	strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt,
+	dd, ol, ul, li,fieldset, form, label, legend,table, caption,
+	tbody, tfoot, thead, tr, th, td,article, aside, canvas, details,
+	embed, figure, figcaption, footer, header, hgroup, menu, nav,
+	output, ruby, section, summary,time, mark, audio, video
+		margin: 0 
 		padding: 0
-	&.title_center
-		text-align: center
-
-.btn
-	height: 42px
-	padding: 0 13px 
-	background-color: #68A20F
-	+background-image(linear-gradient(to top, #68A20F 0%, #8AB616 100%))
-	border-radius: 2px
-	+fsb
-	font-size: 14px
-	color: #FFF 
-	vertical-align: middle
-	&:hover
-		background-color: #8BB716 
-		+background-image(linear-gradient(to top, #8BB716 0%, #9BCC1A 100%))
-	&:active
-		background-color: #68A20F 
-		+background-image(linear-gradient(to top, #68A20F 0%, #8AB616 100%))
-		box-shadow: inset 0 0 4px rgba(49, 76, 0, 0.75)
-	&.btn_wide
+		border: 0
+		vertical-align: baseline
+	body, html
+		height: 100%	
+	img,fieldset, a img
+		border: none
+	input[type="text"],
+	input[type="email"],
+	input[type="tel"],
+	textarea
+		-webkit-appearance: none
+	input[type="submit"],
+	button
+		cursor: pointer
+		&::-moz-focus-inner
+			padding: 0
+			border: 0
+	textarea 
+		overflow: auto
+	input, button 
+		margin: 0
+		padding: 0
+		border: 0
+	div, input, textarea, select,button,
+	h1,h2,h3,h4,h5,h6,a,span,a:focus 
+		outline: none
+	ul,ol	
+		list-style-type: none 
+	+iphone
+		*   
+			-webkit-text-size-adjust: none
+	table
+		border-spacing: 0
+		border-collapse: collapse
 		width: 100%
-	&.btn_big
-		height: 62px
-		padding: 0 18px
-	&.btn_bigger
-		height: 52px
-		padding: 0 20px
-		font-size: 18px
-	&.btn_gray
-		+background-image(linear-gradient(to top, #E9E9E9 0%, #FFF 100%))
-		border: 1px solid #CCC
-		+f
-		font-size: 20px
-		color: #000 
-		&:hover
-			background-color: #F1F1F1 
-			+background-image(linear-gradient(to top, #FFF 0%, #F1F1F1 100%))
-		&:active
-			background-color: #E9E9E9 
-			+background-image(linear-gradient(to top, #E9E9E9 0%, #FFF 100%))
-			box-shadow: inset 0 0 4px rgba(102, 102, 102, 0.75)
-	&.btn_yellow
-		background-color: #F9B300
-		+background-image(linear-gradient(to top, #F9B300 0%, #FDDE18 100%))
-		color: #000 
-		&:hover
-			background-color: #FFEA65 
-			+background-image(linear-gradient(to top, #FFEA65 0%, #FDDE18 100%))
-		&:active
-			background-color: #F9B300 
-			+background-image(linear-gradient(to top, #F9B300 0%, #FDDE18 100%))
-			box-shadow: inset 0 0 5px rgba(193, 123, 1, 0.75)
-	&.btn_ico
-		font-size: 0
-		i, span
-			display: inline-block
-			vertical-align: middle
-		i
-			margin-right: 13px
-		span
-			font-size: 12px
-		&.is-active
-			.btn__heart
-				+sp(heart-a)
-	.btn__heart
-		+s(heart)
 
-.sl
-	position: relative
-	margin-bottom: 20px
-	.sl__in
-		position: relative
-		z-index: 2 
-	.sl__item
-		position: relative
-		height: 280px 
-	.sl__content
-		position: absolute
-		top: 30px
-		left: 340px 
-		right: 140px
-		color: #FFF
-	.sl__title
-		margin-bottom: 20px
-		+fb
-		font-size: 24px
-	.sl__text
+	// box-sizing model reset
+	html
+		+box
+	*
+		+box
+		&:before,
+		&:after
+			+box
+
+	.title
 		margin-bottom: 35px
-		font-size: 20px
-	.sl__footer
-		font-size: 0
-	.sl__link
-		display: inline-block
-		padding: 5px 10px
-		background: rgba(#000,.13)
+		padding: 0 15px
+		+fsl
+		font-size: 40px
+		color: $dark 
+		line-height: 1
+		h1, p
+			display: inline-block
+			font-size: 40px
+		h1
+			font-weight: 400  
+		&.title_small
+			margin-bottom: 30px
+			+fsb
+			font-size: 20px
+		&.title_p0
+			padding: 0
+		&.title_center
+			text-align: center
+
+	.btn
+		height: 42px
+		padding: 0 13px 
+		background-color: #68A20F
+		+background-image(linear-gradient(to top, #68A20F 0%, #8AB616 100%))
 		border-radius: 2px
 		+fsb
-		font-size: 15px
+		font-size: 14px
 		color: #FFF 
 		vertical-align: middle
 		&:hover
-			background: rgba(#ebebeb,.13) 
-	.sl__nav
+			background-color: #8BB716 
+			+background-image(linear-gradient(to top, #8BB716 0%, #9BCC1A 100%))
+		&:active
+			background-color: #68A20F 
+			+background-image(linear-gradient(to top, #68A20F 0%, #8AB616 100%))
+			box-shadow: inset 0 0 4px rgba(49, 76, 0, 0.75)
+		&.btn_wide
+			width: 100%
+		&.btn_big
+			height: 62px
+			padding: 0 18px
+		&.btn_bigger
+			height: 52px
+			padding: 0 20px
+			font-size: 18px
+		&.btn_gray
+			+background-image(linear-gradient(to top, #E9E9E9 0%, #FFF 100%))
+			border: 1px solid #CCC
+			+f
+			font-size: 20px
+			color: #000 
+			&:hover
+				background-color: #F1F1F1 
+				+background-image(linear-gradient(to top, #FFF 0%, #F1F1F1 100%))
+			&:active
+				background-color: #E9E9E9 
+				+background-image(linear-gradient(to top, #E9E9E9 0%, #FFF 100%))
+				box-shadow: inset 0 0 4px rgba(102, 102, 102, 0.75)
+		&.btn_yellow
+			background-color: #F9B300
+			+background-image(linear-gradient(to top, #F9B300 0%, #FDDE18 100%))
+			color: #000 
+			&:hover
+				background-color: #FFEA65 
+				+background-image(linear-gradient(to top, #FFEA65 0%, #FDDE18 100%))
+			&:active
+				background-color: #F9B300 
+				+background-image(linear-gradient(to top, #F9B300 0%, #FDDE18 100%))
+				box-shadow: inset 0 0 5px rgba(193, 123, 1, 0.75)
+		&.btn_ico
+			font-size: 0
+			i, span
+				display: inline-block
+				vertical-align: middle
+			i
+				margin-right: 13px
+			span
+				font-size: 12px
+			&.is-active
+				.btn__heart
+					+sp(heart-a)
+		.btn__heart
+			+s(heart)
+
+	.sl
 		position: relative
-		margin-top: -11px
-		border-bottom: 1px solid #e9e3e2
-		z-index: 4
-	.sl__logo
-		position: relative
-		height: 86px
-		margin-top: 11px
-		padding: 10px
-		background: #F5F5F5
-		box-shadow: 0 1px 0 1px #e5e5e5
-		cursor: pointer
-		+vertical
-		z-index: 2 
-		img
-			max-width: 88px
-			max-height: 66px
+		margin-bottom: 20px
+		.sl__in
+			position: relative
+			z-index: 2 
+		.sl__item
+			position: relative
+			height: 280px 
+		.sl__content
+			position: absolute
+			top: 30px
+			left: 340px 
+			right: 140px
+			color: #FFF
+		.sl__title
+			margin-bottom: 20px
+			+fb
+			font-size: 24px
+		.sl__text
+			margin-bottom: 35px
+			font-size: 20px
+		.sl__footer
+			font-size: 0
+		.sl__link
+			display: inline-block
+			padding: 5px 10px
+			background: rgba(#000,.13)
+			border-radius: 2px
+			+fsb
+			font-size: 15px
+			color: #FFF 
 			vertical-align: middle
-		&.is-active,
-		&.slick-center
-			background: #FFF 
-			border: none
-			box-shadow: 0 0 5px rgba(#000,.4)
-			cursor: default
-			z-index: 4 
+			&:hover
+				background: rgba(#ebebeb,.13) 
+		.sl__nav
+			position: relative
+			margin-top: -11px
+			border-bottom: 1px solid #e9e3e2
+			z-index: 4
+		.sl__logo
+			position: relative
+			height: 86px
+			margin-top: 11px
+			padding: 10px
+			background: #F5F5F5
+			box-shadow: 0 1px 0 1px #e5e5e5
+			cursor: pointer
+			+vertical
+			z-index: 2 
+			img
+				max-width: 88px
+				max-height: 66px
+				vertical-align: middle
+			&.is-active,
+			&.slick-center
+				background: #FFF 
+				border: none
+				box-shadow: 0 0 5px rgba(#000,.4)
+				cursor: default
+				z-index: 4 
+				&:after
+					content: ""
+					position: absolute
+					top: -11px
+					left: 0
+					right: 0
+					height: 11px
+					background: #FDDE18
+		.slick-slide img
+			display: inline-block
+			+transform(none)
+		.slick-next,
+		.slick-prev
+			top: 95px
+			margin: 0
+			&:before
+				display: none
+		.slick-prev
+			left: 30px
+			+s(sl-prev)
+			&:hover
+				+sp(sl-prev-h)
+		.slick-next
+			right: 30px
+			+s(sl-next)
+			&:hover
+				+sp(sl-next-h)
+		.btn
+			margin-right: 45px
+			font-size: 15px
+
+	.wrap-el
+		margin: 0 -15px 20px
+		padding-left: 6px
+		font-size: 0
+
+	.wrap-button
+		margin-bottom: 50px
+		text-align: center
+
+	.el
+		display: inline-block
+		width: 312px
+		margin: 0 9px 40px 8px
+		background: #F8F8F8 
+		border: 1px solid #CCC
+		border-radius: 2px
+		vertical-align: top
+		&:hover
+			box-shadow: 0.3px 4px 5px rgba(204, 204, 204, 0.75)
+		.el__pic	
+			position: relative
+			height: 130px
+			background: #fff 
+			+vertical
+			img
+				vertical-align: middle
+		.el__exclusive
+			position: absolute
+			top: -1px
+			left: -1px
+			+s(exclusive)
+		.el__in
+			padding: 2px 15px 30px
+		.el__meta
+			display: table
+			width: 100%
+			margin-bottom: 15px
+		.el__type,
+		.el__fav
+			display: table-cell
+			vertical-align: middle
+		.el__fav
+			text-align: right
+			button
+				+s(star)
+				&:hover
+					+sp(star-h)
+				&:active,
+				&.is-active
+					+sp(star-a)
+		.el__type
+			+fl
+			font-size: 16px
+		.el__text
+			margin-bottom: 15px
+			font-size: 18px
+			color: $dark
+		.el__info
+			display: table
+			width: 100%
+			margin-bottom: 20px
+			li
+				display: table-cell
+				text-align: right
+				font-size: 14px
+				&:first-child
+					text-align: left
+
+	.tabs
+		margin: 0 -15px 70px
+		background: #f7f7f7 
+		.tabs__nav
+			margin-bottom: 40px
+			padding: 0 35px
+			background: #F0F0F0 
+			box-shadow: 0 1px 0 1px #eaeaea inset, 0 -1px 0 1px #eaeaea inset
+		.tabs__list	
+			display: table
+			a
+				display: table-cell
+				height: 59px
+				padding: 0 17px 7px
+				font-size: 0
+				vertical-align: middle
+				&.is-active
+					background: #F7F7F7 
+					box-shadow: 0 1px 0 1px #f4f4f4 inset
+			i, span
+				display: inline-block
+				vertical-align: middle
+			i
+				margin-right: 12px
+			span
+				+fsb
+				font-size: 15px
+				color: #566068 
+		.tabs__fashion
+			+s(tabs-fashion)
+		.tabs__tech
+			+s(tabs-tech)
+		.tabs__beauty
+			+s(tabs-beauty)
+		.tabs__travel
+			+s(tabs-travel)
+		.tabs__home
+			+s(tabs-home)
+		.tabs__in
+			padding: 0 15px 40px
+		.tabs__container
+			display: none
+		.wrap-el
+			margin-bottom: 10px
+		.wrap-button
+			margin-bottom: 0
+
+	.text
+		margin-bottom: 50px
+		.text__in
+			line-height: 2
+
+	.layout
+		display: table
+		width: 100%
+		padding: 15px 0 0 15px 
+
+	.col
+		display: table-cell
+		vertical-align: top
+		table-layout: fixed
+		&.col_section
+			& + .col_aside
+				width: 260px
+				padding: 0 0 0 30px
+		&.col_aside
+			width: 240px
+			padding-right: 30px
+
+	.shop
+		.shop__el
+			margin-bottom: 25px
+		.shop__logo
+			height: 176px
+			border: 1px solid #CCC
+			border-width: 1px 1px 0
+			border-radius: 2px 2px 0 0
+			+vertical
+			img
+				vertical-align: middle
+		.shop__available
+			margin-bottom: 25px
+			padding-bottom: 25px
+			border-bottom: 1px solid #e5e5e5 
+			+fl
+			font-size: 14px
+			text-align: center
+			text-transform: uppercase
+			color: $dark 
+			span
+				display: block
+				margin-bottom: 10px
+				+fsb
+				font-size: 90px
+				line-height: 1
+		.btn
+			height: 30px
+			border-radius: 0 0 2px 2px
+
+	.list-btn
+		button
+			display: block
+			width: 188px
+			height: 30px
+			margin-bottom: 10px
+			padding: 0 8px
+			background: none 
+			border-radius: 4px
+			border: 1px solid
+			+fsb
+			font-size: 12px
+			text-align: left
+			&.is-gray
+				background: #f0f0f0 
+				border-color: #ccc
+			&.is-red
+				border-color: #a72832
+			&.is-viol
+				border-color: #53447e
+			&.is-blue
+				border-color: #2eafb3
+			&.is-green
+				border-color: #adcb80
+
+	.wrap-code
+		margin-bottom: 50px	
+		
+	.wrap-code_logo
+		.code
+			.code__title
+				font-size: 18px	
+			.code__btn
+				width: 180px
+			.btn
+				font-size: 13px
+
+	.code
+		display: table
+		width: 100%
+		margin-bottom: 25px
+		background: #F8F8F8
+		border: 1px solid #CCC
+		border-radius: 2px
+		table-layout: fixed
+		.code__in,
+		.code__btn,
+		.code__logo
+			display: table-cell
+			height: 180px
+		.code__logo
+			width: 135px
+			background: #FFF
+			border-radius: 2px 0 0 2px 
+			vertical-align: middle
+			text-align: center
+			img
+				max-width: 96px
+		.code__in
+			padding: 12px 14px
+			vertical-align: top
+			+fsb
+		.code__btn
+			width: 200px
+			padding: 15px 15px 15px 0
+			text-align: right
+			vertical-align: middle
+		.code__head
+			margin-bottom: 15px
+			color: #666 
+			font-size: 0
+		.code__label,	
+		.code__only,	
+		.code__used
+			display: inline-block
+			vertical-align: middle	
+		.code__label,	
+		.code__only
+			margin-right: 25px
+		.code__label	
+			padding: 3px 0
+			border-radius: 2px
+			text-transform: uppercase
+			font-size: 12px
+			&.is-red,
+			&.is-viol,
+			&.is-green
+				padding: 3px 8px
+				color: #fff 
+			&.is-red
+				background: #A72832 
+			&.is-viol
+				background: #53447E 
+			&.is-green
+				background: #2eafb3 
+		.code__used,
+		.code__only
+			font-size: 16px
+		.code__only
+			color: #5C9800 
+		.code__title	
+			height: 46px
+			margin-bottom: 12px
+			font-size: 20px
+			color: $dark
+			line-height: 1.2
+			overflow: hidden
+		.code__text
+			margin-bottom: 12px
+			font-size: 16px
+			color: #999 
+			+text-overflow
+		.code__foot
+			font-size: 0
+			span
+				display: inline-block
+				margin-right: 25px
+				vertical-align: middle
+				font-size: 14px
+				color: #999 
+				& + span
+					margin: 0
+		.code__vote
+			display: inline-block
+			margin-right: 7px
+			vertical-align: middle
+			button
+				width: 25px
+				height: 27px
+				border: 1px solid #d6d6d6
+				background: #FFF 
+				border-radius: 0 2px 2px 0
+				font-size: 0
+				vertical-align: top
+				&:first-child
+					border-radius: 2px 0 0 2px
+					border-width: 1px 0 1px 1px
+			i
+				display: inline-block
+				vertical-align: middle
+		.code__like
+			i
+				+s(like)
+			&.is-active
+				i
+					+sp(like-a)
+		.code__dislike
+			i
+				+s(dislike)
+			&.is-active
+				i
+					+sp(dislike-a)
+		.btn
+			width: 100%
+			padding: 0
+
+	.breadcrumbs
+		margin-bottom: 15px
+		padding-left: 15px
+		li
+			display: inline
+		a
+			color: #147ACC 
+			&:after
+				content: ">"
+				margin-left: 2px
+				
+	.menu
+		margin-bottom: 30px
+		.menu__group
+			margin-top: 20px
+			padding-top: 20px
+			border-top: 1px solid #e5e5e5
+			&:first-child
+				margin: 0
+				padding: 0
+				border: none
+		.menu__title
+			margin-bottom: 15px
+			+fsb
+			font-size: 18px
+			color: #333 
+		.menu__list
+			li
+				margin-bottom: 7px
+			a
+				color: #147acc 
+			
+	.types
+		margin: 0 15px 50px
+		overflow: hidden
+		.types__list
+			margin: 0 -15px 0 -5px
+			padding-bottom: 1px
+			font-size: 0
+		.types__item
+			position: relative
+			display: inline-block
+			width: 160px
+			height: 144px 
+			margin: 0 -1px -1px 0
+			padding: 23px 15px 0
+			vertical-align: top
+			&:before,
 			&:after
 				content: ""
 				position: absolute
-				top: -11px
+				border: 1px solid #eaeaea
+			&:before
+				top: 22px
 				left: 0
 				right: 0
-				height: 11px
-				background: #FDDE18
-	.slick-slide img
-		display: inline-block
-		+transform(none)
-	.slick-next,
-	.slick-prev
-		top: 95px
-		margin: 0
-		&:before
-			display: none
-	.slick-prev
-		left: 30px
-		+s(sl-prev)
-		&:hover
-			+sp(sl-prev-h)
-	.slick-next
-		right: 30px
-		+s(sl-next)
-		&:hover
-			+sp(sl-next-h)
-	.btn
-		margin-right: 45px
-		font-size: 15px
+				bottom: 22px
+				border-width: 0 1px
+			&:after
+				top: 0
+				left: 14px
+				right: 14px
+				bottom: 0
+				border-width: 1px 0
+			@for $i from 1 through 12
+				&:hover
+					.types__ico-#{$i}
+						+sp(cat#{$i}-h)
+				&:active
+					.types__ico-#{$i}
+						+s(cat#{$i})
+		.types__ico
+			height: 50px
+			margin-bottom: 12px
+			+vertical
+			i
+				display: inline-block
+				vertical-align: middle
+		@for $i from 1 through 12
+			.types__ico-#{$i}
+				+s(cat#{$i})
+		.types__title
+			+fsb
+			font-size: 16px
+			text-align: center
+			color: #333 
 
-.wrap-el
-	margin: 0 -15px 20px
-	padding-left: 6px
-	font-size: 0
+	.shops
+		margin: 0 -5px 40px 0
+		font-size: 0
+		.shops__item
+			display: inline-block
+			width: 213px
+			height: 221px
+			margin: 0 15px 30px
+			padding-top: 14px
+			border: 1px solid #cccccc
+			border-radius: 4px
+			vertical-align: top
+		.shops__like
+			margin-bottom: 15px
+			padding-right: 15px 
+			text-align: right
+			button
+				+s(heart)
+				&.is-active
+					+sp(heart-a)
+		.shops__pic
+			text-align: center
+			font-size: 0
 
-.wrap-button
-	margin-bottom: 50px
-	text-align: center
-
-.el
-	display: inline-block
-	width: 312px
-	margin: 0 9px 40px 8px
-	background: #F8F8F8 
-	border: 1px solid #CCC
-	border-radius: 2px
-	vertical-align: top
-	&:hover
-		box-shadow: 0.3px 4px 5px rgba(204, 204, 204, 0.75)
-	.el__pic	
-		position: relative
-		height: 130px
-		background: #fff 
-		+vertical
-		img
+	.pop
+		font-size: 0
+		.pop__item
+			display: inline-block
+			width: 20%
+			margin-bottom: 30px
+			padding: 0 20px
 			vertical-align: middle
-	.el__exclusive
-		position: absolute
-		top: -1px
-		left: -1px
-		+s(exclusive)
-	.el__in
-		padding: 2px 15px 30px
-	.el__meta
-		display: table
-		width: 100%
-		margin-bottom: 15px
-	.el__type,
-	.el__fav
-		display: table-cell
-		vertical-align: middle
-	.el__fav
-		text-align: right
-		button
+
+	.letters
+		margin-bottom: 60px
+		border-top: 1px solid #E5E5E5 
+		font-size: 0
+		&.is-fixed
+			height: 114px
+			.letters__in
+				position: fixed
+				top: 0
+				left: 50%
+				width: 970px
+				margin-left: -485px  
+				background: #FFF 
+		.letters__row
+			padding: 15px 8px
+			border-bottom: 1px solid #E5E5E5 
+			+justify
+		a
+			display: inline-block
+			padding: 0 6px
+			border: 1px solid transparent
+			vertical-align: top
+			font-size: 16px
+			color: #147acc 
+			text-transform: uppercase
+			line-height: 24px
+			&.is-active
+				border-color: #cccccc
+				color: #333 
+
+	.catalog
+		margin-bottom: 40px
+		.catalog__item
+			margin-top: 10px
+			padding-top: 20px
+			border-top: 1px solid #e5e5e5
+			+clr
+			&:first-child
+				margin: 0
+				padding: 0
+				border: none
+		.catalog__letter
+			float: left
+			width: 145px
+			padding-left: 15px
+			+fb
+			font-size: 120px 
+			color: #333
+			line-height: 0.65
+		.catalog__list
+			float: left
+			width: 825px 
+			ul
+				float: left
+				width: 20%
+				padding-right: 20px
+			li
+				margin-bottom: 10px
+			a
+				color: #147acc 
+
+	.popup
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		padding: 100px 0
+		background: rgba(#000,.5)
+		+vertical
+		overflow: auto
+		z-index: 999
+		.popup__in	
+			position: relative
+			display: inline-block
+			width: 600px
+			margin: 0 auto
+			background: #FFF
+			box-shadow: 0 5px 5px rgba(51, 51, 51, 0.75)
+			vertical-align: middle
+		.popup__close
+			position: absolute
+			top: 15px
+			right: 25px
+			+s(close)
+			z-index: 4 
+			&:hover
+				+sp(close-h)
+		.popup__head
+			padding: 40px 30px 25px
+			background: #F8F8F8 
+			border-bottom: 1px solid #DFE3E6
+		.popup__title
+			margin-bottom: 20px
+			+fl
+			font-size: 22px
+			color: $dark 
+		.popup__title_mb0
+			margin-bottom: 0
+		.popup__code
+			margin-bottom: 25px
+			font-size: 0
+			text-align: center
+		.popup__code-in
+			display: inline-block
+			border: 1px dashed #dde1e2
+			background: #FFF 
+			vertical-align: top
+			span
+				display: block
+				width: 290px
+				height: 46px
+				+fsb
+				font-size: 36px
+				color: #333 
+				line-height: 43px
+		.popup__center
+			padding: 25px 30px
+			border-bottom: 1px solid #DFE3E6 
+		.popup__foot
+			display: table
+			width: 100%
+		.popup__foot-cell
+			display: table-cell
+			vertical-align: middle
+			padding: 15px 30px
+		.popup__el
+			position: relative
+			display: table
+			width: 100%
+			text-align: left
+		.popup__el-pic,
+		.popup__el-in
+			display: table-cell
+			vertical-align: middle
+		.popup__el-pic
+			width: 120px
+			padding-right: 20px
+			img
+				max-width: 100%
+		.popup__el-in
+			padding-right: 35px
+		.popup__el-title
+			margin-bottom: 5px
+			+fsb
+			font-size: 18px
+			color: $dark 
+		.popup__el-text
+			font-size: 16px
+			color: #666 
+		.popup__el-fav
+			position: absolute
+			top: 0
+			right: 0
 			+s(star)
 			&:hover
 				+sp(star-h)
 			&:active,
 			&.is-active
 				+sp(star-a)
-	.el__type
-		+fl
-		font-size: 16px
-	.el__text
-		margin-bottom: 15px
-		font-size: 18px
-		color: $dark
-	.el__info
-		display: table
-		width: 100%
-		margin-bottom: 20px
-		li
-			display: table-cell
-			text-align: right
-			font-size: 14px
-			&:first-child
-				text-align: left
-
-.tabs
-	margin: 0 -15px 70px
-	background: #f7f7f7 
-	.tabs__nav
-		margin-bottom: 40px
-		padding: 0 35px
-		background: #F0F0F0 
-		box-shadow: 0 1px 0 1px #eaeaea inset, 0 -1px 0 1px #eaeaea inset
-	.tabs__list	
-		display: table
-		a
-			display: table-cell
-			height: 59px
-			padding: 0 17px 7px
-			font-size: 0
-			vertical-align: middle
-			&.is-active
-				background: #F7F7F7 
-				box-shadow: 0 1px 0 1px #f4f4f4 inset
-		i, span
-			display: inline-block
-			vertical-align: middle
-		i
-			margin-right: 12px
-		span
-			+fsb
-			font-size: 15px
-			color: #566068 
-	.tabs__fashion
-		+s(tabs-fashion)
-	.tabs__tech
-		+s(tabs-tech)
-	.tabs__beauty
-		+s(tabs-beauty)
-	.tabs__travel
-		+s(tabs-travel)
-	.tabs__home
-		+s(tabs-home)
-	.tabs__in
-		padding: 0 15px 40px
-	.wrap-el
-		margin-bottom: 10px
-	.wrap-button
-		margin-bottom: 0
-
-.text
-	margin-bottom: 50px
-	.text__in
-		line-height: 2
-
-.layout
-	display: table
-	width: 100%
-	padding: 15px 0 0 15px 
-
-.column
-	display: table-cell
-	vertical-align: top
-	table-layout: fixed
-	&.column_section
-		& + .column_aside
-			width: 260px
-			padding: 0 0 0 30px
-	&.column_aside
-		width: 240px
-		padding-right: 30px
-
-.shop
-	.shop__el
-		margin-bottom: 25px
-	.shop__logo
-		height: 176px
-		border: 1px solid #CCC
-		border-width: 1px 1px 0
-		border-radius: 2px 2px 0 0
-		+vertical
-		img
-			vertical-align: middle
-	.shop__available
-		margin-bottom: 25px
-		padding-bottom: 25px
-		border-bottom: 1px solid #e5e5e5 
-		+fl
-		font-size: 14px
-		text-align: center
-		text-transform: uppercase
-		color: $dark 
-		span
-			display: block
-			margin-bottom: 10px
-			+fsb
-			font-size: 90px
-			line-height: 1
-	.btn
-		height: 30px
-		border-radius: 0 0 2px 2px
-
-.list-btn
-	button
-		display: block
-		width: 188px
-		height: 30px
-		margin-bottom: 10px
-		padding: 0 8px
-		background: none 
-		border-radius: 4px
-		border: 1px solid
-		+fsb
-		font-size: 12px
-		text-align: left
-		&.is-gray
-			background: #f0f0f0 
-			border-color: #ccc
-		&.is-red
-			border-color: #a72832
-		&.is-viol
-			border-color: #53447e
-		&.is-blue
-			border-color: #2eafb3
-		&.is-green
-			border-color: #2eafb3
-
-.wrap-code
-	margin-bottom: 50px	
-	
-.wrap-code_logo
-	.code
-		.code__title
-			font-size: 18px	
-		.code__btn
-			width: 180px
-		.btn
-			font-size: 13px
-
-.code
-	display: table
-	width: 100%
-	margin-bottom: 25px
-	background: #F8F8F8
-	border: 1px solid #CCC
-	border-radius: 2px
-	table-layout: fixed
-	.code__in,
-	.code__btn,
-	.code__logo
-		display: table-cell
-		height: 180px
-	.code__logo
-		width: 135px
-		background: #FFF
-		border-radius: 2px 0 0 2px 
-		vertical-align: middle
-		text-align: center
-		img
-			max-width: 96px
-	.code__in
-		padding: 12px 14px
-		vertical-align: top
-		+fsb
-	.code__btn
-		width: 200px
-		padding: 15px 15px 15px 0
-		text-align: right
-		vertical-align: middle
-	.code__head
-		margin-bottom: 15px
-		color: #666 
-		font-size: 0
-	.code__label,	
-	.code__only,	
-	.code__used
-		display: inline-block
-		vertical-align: middle	
-	.code__label,	
-	.code__only
-		margin-right: 25px
-	.code__label	
-		padding: 3px 0
-		border-radius: 2px
-		text-transform: uppercase
-		font-size: 12px
-		&.is-red,
-		&.is-viol,
-		&.is-green
-			padding: 3px 8px
-			color: #fff 
-		&.is-red
-			background: #A72832 
-		&.is-viol
-			background: #53447E 
-		&.is-green
-			background: #2eafb3 
-	.code__used,
-	.code__only
-		font-size: 16px
-	.code__only
-		color: #5C9800 
-	.code__title	
-		height: 46px
-		margin-bottom: 12px
-		font-size: 20px
-		color: $dark
-		line-height: 1.2
-		overflow: hidden
-	.code__text
-		margin-bottom: 12px
-		font-size: 16px
-		color: #999 
-		+text-overflow
-	.code__foot
-		font-size: 0
-		span
-			display: inline-block
-			margin-right: 25px
-			vertical-align: middle
-			font-size: 14px
-			color: #999 
-			& + span
-				margin: 0
-	.code__vote
-		display: inline-block
-		margin-right: 7px
-		vertical-align: middle
-		button
-			width: 25px
-			height: 27px
-			border: 1px solid #d6d6d6
-			background: #FFF 
-			border-radius: 0 2px 2px 0
-			font-size: 0
-			vertical-align: top
-			&:first-child
-				border-radius: 2px 0 0 2px
-				border-width: 1px 0 1px 1px
-		i
-			display: inline-block
-			vertical-align: middle
-	.code__like
-		i
-			+s(like)
-		&.is-active
-			i
-				+sp(like-a)
-	.code__dislike
-		i
-			+s(dislike)
-		&.is-active
-			i
-				+sp(dislike-a)
-	.btn
-		width: 100%
-		padding: 0
-
-.breadcrumbs
-	margin-bottom: 15px
-	padding-left: 15px
-	li
-		display: inline
-	a
-		color: #147ACC 
-		&:after
-			content: ">"
-			margin-left: 2px
-			
-.menu
-	margin-bottom: 30px
-	.menu__group
-		margin-top: 20px
-		padding-top: 20px
-		border-top: 1px solid #e5e5e5
-		&:first-child
-			margin: 0
-			padding: 0
-			border: none
-	.menu__title
-		margin-bottom: 15px
-		+fsb
-		font-size: 18px
-		color: #333 
-	.menu__list
-		li
-			margin-bottom: 7px
-		a
-			color: #147acc 
-		
-.types
-	margin: 0 15px 50px
-	overflow: hidden
-	.types__list
-		margin: 0 -15px 0 -5px
-		padding-bottom: 1px
-		font-size: 0
-	.types__item
-		position: relative
-		display: inline-block
-		width: 160px
-		height: 144px 
-		margin: 0 -1px -1px 0
-		padding: 23px 15px 0
-		vertical-align: top
-		&:before,
-		&:after
-			content: ""
-			position: absolute
-			border: 1px solid #eaeaea
-		&:before
-			top: 22px
-			left: 0
-			right: 0
-			bottom: 22px
-			border-width: 0 1px
-		&:after
-			top: 0
-			left: 14px
-			right: 14px
-			bottom: 0
-			border-width: 1px 0
-		@for $i from 1 through 12
-			&:hover
-				.types__ico-#{$i}
-					+sp(cat#{$i}-h)
-			&:active
-				.types__ico-#{$i}
-					+s(cat#{$i})
-	.types__ico
-		height: 50px
-		margin-bottom: 12px
-		+vertical
-		i
-			display: inline-block
-			vertical-align: middle
-	@for $i from 1 through 12
-		.types__ico-#{$i}
-			+s(cat#{$i})
-	.types__title
-		+fsb
-		font-size: 16px
-		text-align: center
-		color: #333 
-
-.shops
-	margin: 0 -5px 40px 0
-	font-size: 0
-	.shops__item
-		display: inline-block
-		width: 213px
-		height: 221px
-		margin: 0 15px 30px
-		padding-top: 14px
-		border: 1px solid #cccccc
-		border-radius: 4px
-		vertical-align: top
-	.shops__like
-		margin-bottom: 15px
-		padding-right: 15px 
-		text-align: right
-		button
-			+s(heart)
-			&.is-active
-				+sp(heart-a)
-	.shops__pic
-		text-align: center
-		font-size: 0
-
-.pop
-	font-size: 0
-	.pop__item
-		display: inline-block
-		width: 20%
-		margin-bottom: 30px
-		padding: 0 20px
-		vertical-align: middle
-
-.letters
-	margin-bottom: 60px
-	border-top: 1px solid #E5E5E5 
-	font-size: 0
-	.letters__row
-		padding: 15px 8px
-		border-bottom: 1px solid #E5E5E5 
-		+justify
-	a
-		display: inline-block
-		padding: 0 6px
-		border: 1px solid transparent
-		vertical-align: top
-		font-size: 16px
-		color: #147acc 
-		text-transform: uppercase
-		line-height: 24px
-		&.is-active
-			border-color: #cccccc
-			color: #333 
-
-.catalog
-	margin-bottom: 40px
-	.catalog__item
-		margin-top: 10px
-		padding-top: 20px
-		border-top: 1px solid #e5e5e5
-		+clr
-		&:first-child
-			margin: 0
-			padding: 0
-			border: none
-	.catalog__letter
-		float: left
-		width: 145px
-		padding-left: 15px
-		+fb
-		font-size: 120px 
-		color: #333
-		line-height: 0.65
-	.catalog__list
-		float: left
-		width: 825px 
-		ul
-			float: left
-			width: 20%
-			padding-right: 20px
-		li
-			margin-bottom: 10px
-		a
-			color: #147acc 
-
-.popup
-	position: fixed
-	top: 0
-	left: 0
-	right: 0
-	bottom: 0
-	padding: 100px 0
-	background: rgba(#000,.5)
-	+vertical
-	z-index: 999
-	.popup__in	
-		position: relative
-		display: inline-block
-		width: 600px
-		margin: 0 auto
-		background: #FFF
-		box-shadow: 0 5px 5px rgba(51, 51, 51, 0.75)
-		vertical-align: middle
-	.popup__close
-		position: absolute
-		top: 15px
-		right: 25px
-		+s(close)
-		z-index: 4 
-		&:hover
-			+sp(close-h)
-	.popup__head
-		padding: 40px 30px 25px
-		background: #F8F8F8 
-		border-bottom: 1px solid #DFE3E6
-	.popup__title
-		margin-bottom: 20px
-		+fl
-		font-size: 22px
-		color: $dark 
-	.popup__title_mb0
-		margin-bottom: 0
-	.popup__code
-		margin-bottom: 25px
-		font-size: 0
-		text-align: center
-	.popup__code-in
-		display: inline-block
-		border: 1px dashed #dde1e2
-		background: #FFF 
-		vertical-align: top
-		span
-			display: block
-			width: 290px
-			height: 46px
-			+fsb
-			font-size: 36px
-			color: #333 
-			line-height: 43px
-	.popup__center
-		padding: 25px 30px
-		border-bottom: 1px solid #DFE3E6 
-	.popup__foot
-		display: table
-		width: 100%
-	.popup__foot-cell
-		display: table-cell
-		vertical-align: middle
-		padding: 15px 30px
-	.popup__el
-		position: relative
-		display: table
-		width: 100%
-		text-align: left
-	.popup__el-pic,
-	.popup__el-in
-		display: table-cell
-		vertical-align: middle
-	.popup__el-pic
-		width: 120px
-		padding-right: 20px
-		img
-			max-width: 100%
-	.popup__el-in
-		padding-right: 35px
-	.popup__el-title
-		margin-bottom: 5px
-		+fsb
-		font-size: 18px
-		color: $dark 
-	.popup__el-text
-		font-size: 16px
-		color: #666 
-	.popup__el-fav
-		position: absolute
-		top: 0
-		right: 0
-		+s(star)
-		&:hover
-			+sp(star-h)
-		&:active,
-		&.is-active
-			+sp(star-a)
-	.popup__text
-		padding-top: 15px
-		font-size: 16px
-		a
-			color: #147acc 
-	.popup__text_mb40
-		margin-bottom: 40px
-	.popup__link
-		text-align: right
-		a
+		.popup__text
+			padding-top: 15px
 			font-size: 16px
-			color: #147acc 
-	.btn
-		min-width: 380px
+			a
+				color: #147acc 
+		.popup__text_mb40
+			margin-bottom: 40px
+		.popup__link
+			text-align: right
+			a
+				font-size: 16px
+				color: #147acc 
+		.btn
+			min-width: 380px
 
-.social
-	font-size: 0
-	a
-		display: inline-block
-		margin-left: 3px
-		vertical-align: middle
-		&:first-child
-			margin: 0
-	.social__vk
-		+s(vk)
-		&:hover
-			+sp(vk-h)
-	.social__fb
-		+s(fb)
-		&:hover
-			+sp(fb-h)
-	.social__tw
-		+s(tw)
-		&:hover
-			+sp(tw-h)
-	.social__gp
-		+s(gp)
-		&:hover
-			+sp(gp-h)
-	.social__mail
-		+s(mail)
-		&:hover
-			+sp(mail-h)
+	.social
+		font-size: 0
+		a
+			display: inline-block
+			margin-left: 3px
+			vertical-align: middle
+			&:first-child
+				margin: 0
+		.social__vk
+			+s(vk)
+			&:hover
+				+sp(vk-h)
+		.social__fb
+			+s(fb)
+			&:hover
+				+sp(fb-h)
+		.social__tw
+			+s(tw)
+			&:hover
+				+sp(tw-h)
+		.social__gp
+			+s(gp)
+			&:hover
+				+sp(gp-h)
+		.social__mail
+			+s(mail)
+			&:hover
+				+sp(mail-h)
 
 
 
