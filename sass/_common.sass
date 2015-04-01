@@ -864,18 +864,28 @@ button
 			font-size: 0
 			text-align: center
 		.popup__code-in
+			position: relative
 			display: inline-block
+			width: 290px
+			height: 48px
 			border: 1px dashed #dde1e2
 			background: #FFF 
 			vertical-align: top
 			span
-				display: block
-				width: 290px
-				height: 46px
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
 				+fsb
 				font-size: 36px
 				color: #333 
-				line-height: 43px
+				line-height: 44px
+				z-index: 2
+			object
+				position: relative
+				+opacity(0)
+				z-index: 4 
 		.popup__center
 			padding: 25px 30px
 			border-bottom: 1px solid #DFE3E6 
