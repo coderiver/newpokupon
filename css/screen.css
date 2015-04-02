@@ -258,6 +258,7 @@ button:active { box-shadow: none; }
 .wrapper .popup .popup__title { margin-bottom: 20px; font-family: "SegoeWP-Light", Arial, sans-serif; font-size: 22px; color: #1f384b; }
 .wrapper .popup .popup__title_mb0 { margin-bottom: 0; }
 .wrapper .popup .popup__code { margin-bottom: 25px; font-size: 0; text-align: center; }
+.wrapper .popup .popup__code_banner .popup__code-in { height: auto; }
 .wrapper .popup .popup__code-in { position: relative; display: inline-block; width: 290px; height: 48px; border: 1px dashed #dde1e2; background: white; vertical-align: top; }
 .wrapper .popup .popup__code-in span { position: absolute; top: 0; left: 0; right: 0; bottom: 0; font-family: "SegoeWP-SemiBold", Arial, sans-serif; font-size: 36px; color: #333333; line-height: 44px; z-index: 2; }
 .wrapper .popup .popup__code-in object { position: relative; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; z-index: 4; }
