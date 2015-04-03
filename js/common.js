@@ -70,6 +70,8 @@ $(document).ready(function() {
         code = $('.js-code');
     sort.on('click', function () {
         var type = $(this).data('code');
+        sort.removeClass('is-active');
+        $(this).addClass('is-active');
         if (type === undefined) {
             code.show();
         }
@@ -111,6 +113,36 @@ $(document).ready(function() {
             return false;
         });
     };
+}());
+
+// toggle text
+function shorten(text, maxLength) {
+    var ret = text;
+    if (ret.length > maxLength) {
+        ret = ret.substr(0,maxLength-3) + "...";
+    }
+    return ret;
+}
+// 
+(function () {
+    var text = $('.js-toggle-text');
+    text.each(function () {
+        var thisText = $(this),
+            content = thisText.text(),
+            maxLength = 55;
+        var shortText = $.trim(content).substring(0, maxLength).split(' ').slice(0, -1).join(' ') + " ...";
+        thisText.text(shortText);
+        thisText.on('click', function () {
+            if (thisText.hasClass('is-open')) {
+                thisText.text(shortText);
+                thisText.removeClass('is-open');
+            }
+            else {
+                thisText.text(content);
+                thisText.addClass('is-open');
+            }
+        });
+    });
 }());
 
 
