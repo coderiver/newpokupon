@@ -66,6 +66,7 @@ button:active { box-shadow: none; }
 .wrapper .sl .sl__link { display: inline-block; padding: 5px 10px; background: rgba(0, 0, 0, 0.13); border-radius: 2px; font-family: "SegoeWP-SemiBold", Arial, sans-serif; font-size: 15px; color: white; vertical-align: middle; }
 .wrapper .sl .sl__link:hover { background: rgba(235, 235, 235, 0.13); }
 .wrapper .sl .sl__nav { position: relative; margin-top: -11px; border-bottom: 1px solid #e9e3e2; z-index: 4; }
+.wrapper .sl .sl__nav.is-six .slick-track { margin: 0 auto; }
 .wrapper .sl .sl__logo { position: relative; height: 86px; margin-top: 11px; padding: 10px; background: whitesmoke; box-shadow: 0 1px 0 1px #e5e5e5; cursor: pointer; text-align: center; font-size: 0; z-index: 2; }
 .wrapper .sl .sl__logo:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
 .wrapper .sl .sl__logo img { max-width: 88px; max-height: 66px; vertical-align: middle; }
@@ -95,7 +96,7 @@ button:active { box-shadow: none; }
 .wrapper .el .el__fav button:hover { background-position: 0 -760px; }
 .wrapper .el .el__fav button:active, .wrapper .el .el__fav button.is-active { background-position: 0 0; }
 .wrapper .el .el__type { font-family: "SegoeWP-Light", Arial, sans-serif; font-size: 16px; }
-.wrapper .el .el__text { margin-bottom: 15px; font-size: 18px; color: #1f384b; }
+.wrapper .el .el__text { height: 69px; margin-bottom: 15px; font-size: 18px; color: #1f384b; overflow: hidden; }
 .wrapper .el .el__info { display: table; width: 100%; margin-bottom: 20px; }
 .wrapper .el .el__info li { display: table-cell; text-align: right; font-size: 14px; }
 .wrapper .el .el__info li:first-child { text-align: left; }
@@ -280,8 +281,8 @@ button:active { box-shadow: none; }
 .wrapper .popup .popup__el-pic { width: 120px; padding-right: 20px; }
 .wrapper .popup .popup__el-pic img { max-width: 100%; }
 .wrapper .popup .popup__el-in { padding-right: 35px; }
-.wrapper .popup .popup__el-title { margin-bottom: 5px; font-family: "SegoeWP-SemiBold", Arial, sans-serif; font-size: 18px; color: #1f384b; }
-.wrapper .popup .popup__el-text { font-size: 16px; color: #666666; }
+.wrapper .popup .popup__el-title { margin-bottom: 5px; font-family: "SegoeWP-SemiBold", Arial, sans-serif; font-size: 18px; color: #1f384b; -ms-word-break: break-all; word-break: break-all; }
+.wrapper .popup .popup__el-text { font-size: 16px; color: #666666; -ms-word-break: break-all; word-break: break-all; }
 .wrapper .popup .popup__el-fav { position: absolute; top: 0; right: 0; background: url('../img/icons-s3b0e6ccfbf.png') 0 -35px no-repeat; width: 25px; height: 25px; }
 .wrapper .popup .popup__el-fav:hover { background-position: 0 -760px; }
 .wrapper .popup .popup__el-fav:active, .wrapper .popup .popup__el-fav.is-active { background-position: 0 0; }

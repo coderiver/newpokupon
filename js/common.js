@@ -5,14 +5,14 @@ $(document).ready(function() {
     var slEl = $('.js-sl');
     if (slEl.length) {
         var slNav = $('.js-sl-nav');
-        if (slEl.find('>div').length > 6) {
+        if (slEl.find('>div').length >= 6) {
             slEl.slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 asNavFor: slNav
             });
             slNav.slick({
-                slidesToShow: 6,
+                slidesToShow: 5,
                 slidesToScroll: 1,
                 arrows: false,
                 swipe: false,
@@ -34,7 +34,8 @@ $(document).ready(function() {
                 arrows: false,
                 swipe: false,
                 asNavFor: slEl,
-                focusOnSelect: true
+                focusOnSelect: true,
+                infinite: false
             });
             slNav.find('.slick-slide').eq(0).addClass('is-active');
             slEl.on('afterChange', function(event, slick, currentSlide, nextSlide){

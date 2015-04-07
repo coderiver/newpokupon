@@ -265,6 +265,9 @@ button
 			margin-top: -11px
 			border-bottom: 1px solid #e9e3e2
 			z-index: 4
+			&.is-six
+				.slick-track
+					margin: 0 auto
 		.sl__logo
 			position: relative
 			height: 86px
@@ -371,9 +374,11 @@ button
 			+fl
 			font-size: 16px
 		.el__text
+			height: 69px
 			margin-bottom: 15px
 			font-size: 18px
 			color: $dark
+			overflow: hidden
 		.el__info
 			display: table
 			width: 100%
@@ -950,9 +955,13 @@ button
 			+fsb
 			font-size: 18px
 			color: $dark 
+			-ms-word-break: break-all
+			word-break: break-all
 		.popup__el-text
 			font-size: 16px
 			color: #666 
+			-ms-word-break: break-all
+			word-break: break-all
 		.popup__el-fav
 			position: absolute
 			top: 0
